@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'leveldb-modular_Example' do
+  pod 'leveldb-modular', :path => '../'
+
+  target 'leveldb-modular_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
