@@ -1,13 +1,23 @@
 # leveldb-modular
 
-[![CI Status](http://img.shields.io/travis/Paul Beusterien/leveldb-modular.svg?style=flat)](https://travis-ci.org/Paul Beusterien/leveldb-modular)
-[![Version](https://img.shields.io/cocoapods/v/leveldb-modular.svg?style=flat)](http://cocoapods.org/pods/leveldb-modular)
-[![License](https://img.shields.io/cocoapods/l/leveldb-modular.svg?style=flat)](http://cocoapods.org/pods/leveldb-modular)
-[![Platform](https://img.shields.io/cocoapods/p/leveldb-modular.svg?style=flat)](http://cocoapods.org/pods/leveldb-modular)
-
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+- git clone git@github.com:paulb777/leveldb-modular.git
+- cd leveldb-modular/Example/
+- pod update
+- open leveldb-modular.xcworkspace/
+- build and notice failure
+- grep HEADER_SEARCH_PATH "Pods/Target Support Files/leveldb-modular/leveldb-modular.xcconfig"
+```
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public"
+```
+- Remove `:modular_headers => true` from Podfile
+- pod update
+- grep HEADER_SEARCH_PATH "Pods/Target Support Files/leveldb-modular/leveldb-modular.xcconfig"
+```
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/leveldb-library"
+```
+- Notice that the search path is now correct
 
 ## Requirements
 
