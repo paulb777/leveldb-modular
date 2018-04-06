@@ -1,7 +1,9 @@
-use_frameworks!
+
 
 target 'leveldb-modular_Example' do
-  pod 'leveldb-modular', :path => '../'
+  pod 'leveldb-modular', :path => '../', :modular_headers => true
+ # pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :tag => '4.11.0'
+ # pod 'FirebaseDatabase', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :tag => '4.11.0'
 
   target 'leveldb-modular_Tests' do
     inherit! :search_paths
